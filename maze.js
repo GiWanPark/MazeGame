@@ -244,7 +244,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null)
         ctx.lineWidth = cellSize / 50;
         drawMap();
         drawEndMethod();
-    };
+    }; 
 
     function drawCell(xCord, yCord, cell) 
     {
@@ -474,11 +474,54 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
           break;
       }
     }
-  
+  /*
+    this.bindKeyDown = function() {
+        window.addEventListener("keydown", check, false);
     
-  
+        $("#view").swipe({
+          swipe: function(
+            event,
+            direction,
+            distance,
+            duration,
+            fingerCount,
+            fingerData
+          ) {
+            console.log(direction);
+            switch (direction) {
+              case "up":
+                check({
+                  keyCode: 38
+                });
+                break;
+              case "down":
+                check({
+                  keyCode: 40
+                });
+                break;
+              case "left":
+                check({
+                  keyCode: 37
+                });
+                break;
+              case "right":
+                check({
+                  keyCode: 39
+                });
+                break;
+            }
+          },
+          threshold: 0
+        });
+      };
+    
+      this.unbindKeyDown = function() {
+        window.removeEventListener("keydown", check, false);
+        $("#view").swipe("destroy");
+      };
+  */
     drawSprite(maze.startCoord());
-  
+    //this.bindKeyDown();
   }
 
 window.onload = function(){
